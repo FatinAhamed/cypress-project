@@ -1,0 +1,490 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 14,
+    "passes": 10,
+    "pending": 0,
+    "failures": 4,
+    "testsRegistered": 14,
+    "passPercent": 71.42857142857143,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-05-15T11:40:28.610Z",
+    "end": "2025-05-18T11:00:48.550Z",
+    "duration": 256819940
+  },
+  "results": [
+    {
+      "uuid": "a47cf35c-8900-496f-8d42-a96c5cca97fd",
+      "title": "",
+      "fullFile": "cypress/e2e/ShellBD/Trending_product.cy.js",
+      "file": "cypress/e2e/ShellBD/Trending_product.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2d4f694b-962d-4741-a3b4-00a6b53c99b9",
+          "title": "Trendin Products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_62-Should display Trending Products",
+              "fullTitle": "Trendin Products TC_62-Should display Trending Products",
+              "timedOut": null,
+              "duration": 1646,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.contains(\"h1\", \"Trending Products\").scrollIntoView().should('be.visible');",
+              "err": {},
+              "uuid": "fcb3ac74-837f-4430-a3e0-2f3a4a698427",
+              "parentUUID": "2d4f694b-962d-4741-a3b4-00a6b53c99b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_70-Clicks the next and prev button in the trending products list",
+              "fullTitle": "Trendin Products TC_70-Clicks the next and prev button in the trending products list",
+              "timedOut": null,
+              "duration": 979,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.get('img[alt=\"Next\"]').should('be.visible').first().click();\ncy.get('img[alt=\"Previous\"]').should('be.visible').first().click();",
+              "err": {},
+              "uuid": "bcba6d9b-8b3b-4c01-8893-090462913336",
+              "parentUUID": "2d4f694b-962d-4741-a3b4-00a6b53c99b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_69-Should navigate to product details when clicking on a trending product",
+              "fullTitle": "Trendin Products TC_69-Should navigate to product details when clicking on a trending product",
+              "timedOut": null,
+              "duration": 1163,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://estore.rkpl.com.bd');\ncy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('.product_detail_image img').trigger('mouseover').should('have.css', 'transform').and('not.equal', 'scale(1)');",
+              "err": {},
+              "uuid": "8910ce32-432d-4621-a298-2f03ac9cd80c",
+              "parentUUID": "2d4f694b-962d-4741-a3b4-00a6b53c99b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_71-Product should be added to the cart when Click on Add to Cart",
+              "fullTitle": "Trendin Products TC_71-Product should be added to the cart when Click on Add to Cart",
+              "timedOut": null,
+              "duration": 1000,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://estore.rkpl.com.bd');\ncy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('button[type=\"button\"]').contains('Add to Cart').click();",
+              "err": {},
+              "uuid": "7113a286-80f9-4a8b-9dd1-aa20bcbf9f36",
+              "parentUUID": "2d4f694b-962d-4741-a3b4-00a6b53c99b9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_72-Should not add the same product more than once",
+              "fullTitle": "Trendin Products TC_72-Should not add the same product more than once",
+              "timedOut": null,
+              "duration": 6885,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://estore.rkpl.com.bd');\ncy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('button[type=\"button\"]').contains('Add to Cart').click();\ncy.wait(1000);\ncy.get('button[type=\"button\"]').contains('Add to Cart').click();\ncy.wait(500);\ncy.contains('Product already added!').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Product already added!' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Product already added!' but never did.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/ShellBD/Trending_product.cy.js:77:11)",
+                "diff": null
+              },
+              "uuid": "ffe719eb-474a-4717-ac3d-891ee58c6e72",
+              "parentUUID": "2d4f694b-962d-4741-a3b4-00a6b53c99b9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fcb3ac74-837f-4430-a3e0-2f3a4a698427",
+            "bcba6d9b-8b3b-4c01-8893-090462913336",
+            "8910ce32-432d-4621-a298-2f03ac9cd80c",
+            "7113a286-80f9-4a8b-9dd1-aa20bcbf9f36"
+          ],
+          "failures": [
+            "ffe719eb-474a-4717-ac3d-891ee58c6e72"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11673,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "743d3ed3-3e8f-46da-acb0-9606e14a194a",
+      "title": "",
+      "fullFile": "cypress/e2e/ShellBD/Trending_product.cy.js",
+      "file": "cypress/e2e/ShellBD/Trending_product.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c2fe7dc3-33a7-4629-9c19-fd1b476338d2",
+          "title": "Trendin Products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_62-Should display Trending Products",
+              "fullTitle": "Trendin Products TC_62-Should display Trending Products",
+              "timedOut": null,
+              "duration": 1396,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.contains(\"h1\", \"Trending Products\").scrollIntoView().should('be.visible');",
+              "err": {},
+              "uuid": "8b0874ba-9dee-43e1-b8e6-e088ce03cbcf",
+              "parentUUID": "c2fe7dc3-33a7-4629-9c19-fd1b476338d2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_70-Clicks the next and prev button in the trending products list",
+              "fullTitle": "Trendin Products TC_70-Clicks the next and prev button in the trending products list",
+              "timedOut": null,
+              "duration": 1162,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.get('img[alt=\"Next\"]').should('be.visible').first().click();\ncy.get('img[alt=\"Previous\"]').should('be.visible').first().click();",
+              "err": {},
+              "uuid": "3924d6ff-b02f-4701-ac7b-ece49300a529",
+              "parentUUID": "c2fe7dc3-33a7-4629-9c19-fd1b476338d2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_69-Should navigate to product details when clicking on a trending product",
+              "fullTitle": "Trendin Products TC_69-Should navigate to product details when clicking on a trending product",
+              "timedOut": null,
+              "duration": 1305,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://estore.rkpl.com.bd');\ncy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('.product_detail_image img').trigger('mouseover').should('have.css', 'transform').and('not.equal', 'scale(1)');",
+              "err": {},
+              "uuid": "d9e37f47-bd6e-4ef0-a675-4937ce1149bf",
+              "parentUUID": "c2fe7dc3-33a7-4629-9c19-fd1b476338d2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_71-Product should be added to the cart when Click on Add to Cart",
+              "fullTitle": "Trendin Products TC_71-Product should be added to the cart when Click on Add to Cart",
+              "timedOut": null,
+              "duration": 1174,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://estore.rkpl.com.bd');\ncy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('button[type=\"button\"]').contains('Add to Cart').click();",
+              "err": {},
+              "uuid": "b464a825-fda0-4f67-9f4b-71d521d798c5",
+              "parentUUID": "c2fe7dc3-33a7-4629-9c19-fd1b476338d2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_72-Should not add the same product more than once",
+              "fullTitle": "Trendin Products TC_72-Should not add the same product more than once",
+              "timedOut": null,
+              "duration": 10472,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://estore.rkpl.com.bd');\ncy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('button[type=\"button\"]').contains('Add to Cart').click();\ncy.wait(1000);\ncy.get('button[type=\"button\"]').contains('Add to Cart').click();\ncy.wait(4000);\ncy.contains('Product already added!').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Product already added!' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Product already added!' but never did.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/ShellBD/Trending_product.cy.js:77:11)",
+                "diff": null
+              },
+              "uuid": "e2de2b44-59f8-452e-977a-70a1d57ab55a",
+              "parentUUID": "c2fe7dc3-33a7-4629-9c19-fd1b476338d2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8b0874ba-9dee-43e1-b8e6-e088ce03cbcf",
+            "3924d6ff-b02f-4701-ac7b-ece49300a529",
+            "d9e37f47-bd6e-4ef0-a675-4937ce1149bf",
+            "b464a825-fda0-4f67-9f4b-71d521d798c5"
+          ],
+          "failures": [
+            "e2de2b44-59f8-452e-977a-70a1d57ab55a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 15509,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "e52c4042-ee89-4bfc-9dbc-c81392ef2edf",
+      "title": "",
+      "fullFile": "cypress/e2e/ShellBD/Forgot_pass.cy.js",
+      "file": "cypress/e2e/ShellBD/Forgot_pass.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c86362f-e6ce-4a08-9238-f7e48c3a9b79",
+          "title": "Forgot Password",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_12-Should open the Forgot Password page with phone number field",
+              "fullTitle": "Forgot Password TC_12-Should open the Forgot Password page with phone number field",
+              "timedOut": null,
+              "duration": 3834,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.contains('button', 'Sign In').click();\ncy.get('a[href=\"/forgot-password\"]').click();\ncy.url().should('include', '/forgot-password');\ncy.get('input[name=\"phone\"]').should('be.visible');",
+              "err": {},
+              "uuid": "ae938fa7-a48c-4ec8-bc83-bae3ba568026",
+              "parentUUID": "6c86362f-e6ce-4a08-9238-f7e48c3a9b79",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_13-Should open the OTP verification page and show 'OTP successfully sent' message",
+              "fullTitle": "Forgot Password TC_13-Should open the OTP verification page and show 'OTP successfully sent' message",
+              "timedOut": null,
+              "duration": 5911,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.contains('button', 'Sign In').click();\ncy.get('a[href=\"/forgot-password\"]').click();\ncy.get('input[name=\"phone\"]').type('01851100944');\ncy.contains('div', 'Continue').click();\ncy.get('div[data-title=\"\"]').should('be.visible').and('contain.text', \"OTP successfully sent\");\ncy.url().should('include', '/otp-verification');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[data-title=\"\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[data-title=\"\"]`, but never found it.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/ShellBD/Forgot_pass.cy.js:23:11)",
+                "diff": null
+              },
+              "uuid": "e99a127c-efed-446c-8730-d2600338b485",
+              "parentUUID": "6c86362f-e6ce-4a08-9238-f7e48c3a9b79",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ae938fa7-a48c-4ec8-bc83-bae3ba568026"
+          ],
+          "failures": [
+            "e99a127c-efed-446c-8730-d2600338b485"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9745,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1e4bea00-89e1-4a7b-a670-03d71737d3a5",
+      "title": "",
+      "fullFile": "cypress/e2e/ShellBD/Forgot_pass.cy.js",
+      "file": "cypress/e2e/ShellBD/Forgot_pass.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "04cb6df5-04fc-4afb-9ad0-906bb5e2d267",
+          "title": "Forgot Password",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_12-Should open the Forgot Password page with phone number field",
+              "fullTitle": "Forgot Password TC_12-Should open the Forgot Password page with phone number field",
+              "timedOut": null,
+              "duration": 3209,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.contains('button', 'Sign In').click();\ncy.get('a[href=\"/forgot-password\"]').click();\ncy.url().should('include', '/forgot-password');\ncy.get('input[name=\"phone\"]').should('be.visible');",
+              "err": {},
+              "uuid": "f9ba3120-d456-4617-9bda-9c8d6ffaf1dd",
+              "parentUUID": "04cb6df5-04fc-4afb-9ad0-906bb5e2d267",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC_13-Should open the OTP verification page and show 'OTP successfully sent' message",
+              "fullTitle": "Forgot Password TC_13-Should open the OTP verification page and show 'OTP successfully sent' message",
+              "timedOut": null,
+              "duration": 6033,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://estore.rkpl.com.bd/\");\ncy.contains('button', 'Sign In').click();\ncy.get('a[href=\"/forgot-password\"]').click();\ncy.get('input[name=\"phone\"]').type('01851100944');\ncy.contains('div', 'Continue').click();\ncy.get('div[data-title=\"\"]').should('be.visible').and('contain.text', \"OTP successfully sent\");\ncy.url().should('include', '/otp-verification');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[data-title=\"\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `div[data-title=\"\"]`, but never found it.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/ShellBD/Forgot_pass.cy.js:23:11)",
+                "diff": null
+              },
+              "uuid": "7de97cc1-7153-46e7-9728-ad719edd932a",
+              "parentUUID": "04cb6df5-04fc-4afb-9ad0-906bb5e2d267",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f9ba3120-d456-4617-9bda-9c8d6ffaf1dd"
+          ],
+          "failures": [
+            "7de97cc1-7153-46e7-9728-ad719edd932a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9242,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "test-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": true,
+        "html": true,
+        "json": true,
+        "reportFilename": "test-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
