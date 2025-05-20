@@ -200,11 +200,14 @@ describe("Dropdown Test", () => {
         
         cy.url().should('not.include', '?page=2');
 
+
+
     });
 
     it("TC_94-Should be displayed details abot the product", () => {
       
         cy.get('.grid.grid-cols-2 a').first().click();
+
 
     
     });
@@ -221,17 +224,77 @@ describe("Dropdown Test", () => {
           .first()
           .should("have.attr", "style")
           .and("include", "transform: scale(1.1)");  
+
+
   
     });
 
-    it("TC_97-Zooms in the product image on hover", () => {
+    it("TC_98-The product image should be changed", () => {
       
         cy.get('.grid.grid-cols-2 a').first().click();
 
         cy.get('div[style*="6821a78aaf9cb.jpeg"]').click();
 
         cy.get('img[alt="Product"]').should("have.attr", "src", "/storage/images/6821a78aaf9cb.jpeg");
-          
+    
+
+
+    });
+
+    it("TC_99-Should be displayed inside the rating section", () => {
+
+        
+        cy.get('.grid.grid-cols-2 a').first().click();
+
+        cy.get('a[href="#review_section"]').click();
+
+        cy.get('#review_section').should('be.visible');
+
+
+
+    });
+
+    it("TC_104-If click on Add to Cart the product should be added to the cart", () => {
+
+       
+        cy.get('.grid.grid-cols-2 a').first().click();
+
+        cy.contains('button', 'Add to Cart').click();
+
+
+
+    });
+
+    it("TC_105-If click on By Now button the product should be automatically added to the cart, and the purchasing process should be displayed", () => {
+
+       
+        cy.get('.grid.grid-cols-2 a').first().click();
+        
+        cy.contains('button', 'Buy Now').click();
+
+
+    });
+    
+    it("TC_108-If click on Next button next review page should be displayed", () => {
+
+
+        cy.get('.grid.grid-cols-2 a').first().click();
+
+        cy.get('#review_section').scrollIntoView();
+
+        cy.contains('button', 'Next').click();
+
+
+    });
+    
+    it("TC_108-If click on Next button next review page should be displayed", () => {
+
+
+        cy.get('.grid.grid-cols-2 a').first().click();
+
+        cy.contains('span', '+').click();
+
+
     });
     
   });
