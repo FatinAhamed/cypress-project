@@ -3,6 +3,8 @@ describe("Trendin Products", () => {
   beforeEach(() => {
         cy.visit("/");
 
+    });    
+
     it("TC_62-Should display Trending Products", () => {
         
     
@@ -85,5 +87,3 @@ describe("Trendin Products", () => {
           
   });
 
-
-});

@@ -3,6 +3,8 @@ describe("Login", () => {
     beforeEach(() => {
         cy.visit("/");
 
+    });
+
     it("TC_01-The login page will appear", () => {
         
     });
@@ -52,6 +54,8 @@ describe("Negative Test case", () => {
     beforeEach(() => {
         cy.visit("/");
 
+    });
+
     it("TC_03-should disable 'Sign In' button if phone number and password field are empty", () => {
         
         cy.contains('button', 'Sign In').click();
@@ -72,6 +76,7 @@ describe("Negative Test case", () => {
         cy.get('button[type="submit"]').should('be.disabled');
     
     });
+
     it("TC_05-Should disable 'Sign In' button if password field is empty", () => {
         
         
@@ -157,7 +162,3 @@ describe("Negative Test case", () => {
 
      });
 
-   
-   });
-
-});

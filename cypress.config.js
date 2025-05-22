@@ -1,15 +1,17 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+
   e2e: {
 
-    baseUrl: "https://estore.rkpl.com.bd/", 
+    baseUrl: "https://estore.rkpl.com.bd",
 
-    specPattern: "cypress/e2e/ShellBD/*.cy.js",  
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
 
     supportFile: false,
 
     setupNodeEvents(on, config) {
+
       
     },
 

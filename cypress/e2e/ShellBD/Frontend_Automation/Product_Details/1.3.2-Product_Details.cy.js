@@ -1,12 +1,13 @@
 describe("1.3.1 All Products", () => {
 
     beforeEach(() => {
+        
         cy.visit("/");
 
         cy.get('a[href="/shop"]').first().click();
 
-        
-    
+   
+    });
 
     it("TC_85-Should display searched product", () => {
 
@@ -24,7 +25,6 @@ describe("1.3.1 All Products", () => {
     
   });
 
-});
 
 
 describe("Dropdown Test", () => {

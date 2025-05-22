@@ -1,7 +1,10 @@
 describe("Forgot Password", () => {
 
     beforeEach(() => {
+
         cy.visit("/");
+
+    });
 
 
     it("TC_12-Should open the Forgot Password page with phone number field", () => {
@@ -34,5 +37,3 @@ describe("Forgot Password", () => {
     });
     
   });
-
-});
