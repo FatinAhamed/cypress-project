@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  cypress:
+    build: .
+    container_name: cypress-container
+    volumes:
+      - .:/cypress-tests
+    working_dir: /cypress-tests
