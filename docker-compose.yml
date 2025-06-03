@@ -4,6 +4,31 @@ services:
   cypress:
     build: .
     container_name: cypress-container
+
     volumes:
       - .:/cypress-tests
+
     working_dir: /cypress-tests
+    
+    entrypoint: sh -c "npx cypress run && http-server mochawesome-report -p 8080 -a 0.0.0.0"
+
+    networks: 
+          - cypress-network
+
+  report-server:
+    image: httpd:latest
+
+    container_name: apache-report-server
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./mochawesome-report/combined-report:/usr/local/apache2/htdocs
+    networks:
+      - cypress-network  
+          
+networks:
+  cypress-network:
+    external: true
+
+

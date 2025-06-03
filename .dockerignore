@@ -1,0 +1,17 @@
+# Dependency folders
+node_modules
+.mocha
+.mochawesome-report
+
+# Git files
+.git
+.gitignore
+
+# Log files
+*.log
+npm-debug.log*
+
+# Docker files that shouldn't be copied
+.dockerignore
+Dockerfile
+docker-compose.yml

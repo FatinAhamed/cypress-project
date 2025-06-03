@@ -5,9 +5,9 @@
     "passes": 4,
     "pending": 0,
     "failures": 1,
-    "start": "2025-06-01T05:48:50.381Z",
-    "end": "2025-06-01T05:49:08.448Z",
-    "duration": 18067,
+    "start": "2025-06-03T06:11:25.976Z",
+    "end": "2025-06-03T06:11:42.980Z",
+    "duration": 17004,
     "testsRegistered": 5,
     "passPercent": 80,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8b9da25e-a98f-4aee-a674-75ddbcbde8f5",
+      "uuid": "d9f8515a-5a87-4a65-bf1f-1b0bc45e7cc8",
       "title": "",
       "fullFile": "cypress/e2e/ShellBD/Frontend_Automation/Trending_Products/1.2.7-Trending_Products.cy.js",
       "file": "cypress/e2e/ShellBD/Frontend_Automation/Trending_Products/1.2.7-Trending_Products.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b48ef8fa-ea1c-48ed-bf5b-ae763627d4f0",
+          "uuid": "2d928c59-4286-4240-b19d-1a790a30af06",
           "title": "Trendin Products",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "TC_62-Should display Trending Products",
               "fullTitle": "Trendin Products TC_62-Should display Trending Products",
               "timedOut": null,
-              "duration": 2770,
+              "duration": 1626,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.contains(\"h1\", \"Trending Products\").scrollIntoView().should('be.visible');",
               "err": {},
-              "uuid": "7c69bc21-60a2-48f9-8c6c-bab9d13d31f1",
-              "parentUUID": "b48ef8fa-ea1c-48ed-bf5b-ae763627d4f0",
+              "uuid": "f0653a0e-e7f6-4833-90f4-74bbb188006f",
+              "parentUUID": "2d928c59-4286-4240-b19d-1a790a30af06",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "TC_70-Clicks the next and prev button in the trending products list",
               "fullTitle": "Trendin Products TC_70-Clicks the next and prev button in the trending products list",
               "timedOut": null,
-              "duration": 1358,
+              "duration": 1361,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "cy.get('img[alt=\"Next\"]').should('be.visible').first().click();\ncy.get('img[alt=\"Previous\"]').should('be.visible').first().click();",
               "err": {},
-              "uuid": "ca91cb73-230a-42af-bff3-3f8bb9829dcb",
-              "parentUUID": "b48ef8fa-ea1c-48ed-bf5b-ae763627d4f0",
+              "uuid": "50ca77dc-1824-4628-a0a1-e7a8ecf9c279",
+              "parentUUID": "2d928c59-4286-4240-b19d-1a790a30af06",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "TC_69-Should navigate to product details when clicking on a trending product",
               "fullTitle": "Trendin Products TC_69-Should navigate to product details when clicking on a trending product",
               "timedOut": null,
-              "duration": 1425,
+              "duration": 1486,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,8 +83,8 @@
               "context": null,
               "code": "cy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('.product_detail_image img').trigger('mouseover').should('have.css', 'transform').and('not.equal', 'scale(1)');",
               "err": {},
-              "uuid": "e59ec1b8-7b64-4213-95ab-5ec02ccde548",
-              "parentUUID": "b48ef8fa-ea1c-48ed-bf5b-ae763627d4f0",
+              "uuid": "44aedb10-d16c-4028-9ad2-f3628e346507",
+              "parentUUID": "2d928c59-4286-4240-b19d-1a790a30af06",
               "isHook": false,
               "skipped": false
             },
@@ -92,7 +92,7 @@
               "title": "TC_71-Product should be added to the cart when Click on Add to Cart",
               "fullTitle": "Trendin Products TC_71-Product should be added to the cart when Click on Add to Cart",
               "timedOut": null,
-              "duration": 1594,
+              "duration": 1581,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -101,8 +101,8 @@
               "context": null,
               "code": "cy.get('.slick-slide.slick-active[data-index=\"0\"] a[href^=\"/product/\"]').click();\ncy.get('button[type=\"button\"]').contains('Add to Cart').click();",
               "err": {},
-              "uuid": "c00eeebe-80a7-46a3-a5f5-27a4e2129897",
-              "parentUUID": "b48ef8fa-ea1c-48ed-bf5b-ae763627d4f0",
+              "uuid": "d136900d-ad5e-4717-bef3-2f2185433555",
+              "parentUUID": "2d928c59-4286-4240-b19d-1a790a30af06",
               "isHook": false,
               "skipped": false
             },
@@ -110,7 +110,7 @@
               "title": "TC_72-Should not add the same product more than once",
               "fullTitle": "Trendin Products TC_72-Should not add the same product more than once",
               "timedOut": null,
-              "duration": 10668,
+              "duration": 10743,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -123,25 +123,25 @@
                 "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Product already added!' but never did.\n    at Context.eval (webpack://cypress-project/./cypress/e2e/ShellBD/Frontend_Automation/Trending_Products/1.2.7-Trending_Products.cy.js:82:11)",
                 "diff": null
               },
-              "uuid": "d7967138-b73f-4dd2-a354-e0422874ec10",
-              "parentUUID": "b48ef8fa-ea1c-48ed-bf5b-ae763627d4f0",
+              "uuid": "98c3c879-952a-46df-b6fa-81e8f0a4ff91",
+              "parentUUID": "2d928c59-4286-4240-b19d-1a790a30af06",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "7c69bc21-60a2-48f9-8c6c-bab9d13d31f1",
-            "ca91cb73-230a-42af-bff3-3f8bb9829dcb",
-            "e59ec1b8-7b64-4213-95ab-5ec02ccde548",
-            "c00eeebe-80a7-46a3-a5f5-27a4e2129897"
+            "f0653a0e-e7f6-4833-90f4-74bbb188006f",
+            "50ca77dc-1824-4628-a0a1-e7a8ecf9c279",
+            "44aedb10-d16c-4028-9ad2-f3628e346507",
+            "d136900d-ad5e-4717-bef3-2f2185433555"
           ],
           "failures": [
-            "d7967138-b73f-4dd2-a354-e0422874ec10"
+            "98c3c879-952a-46df-b6fa-81e8f0a4ff91"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 17815,
+          "duration": 16797,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
